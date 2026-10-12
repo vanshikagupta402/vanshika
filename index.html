@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Utsav – Indian Festivals & Cultural Heritage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#home" class="logo">Utsav</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    <nav id="nav">
+      <a href="#festivals">Festivals</a>
+      <a href="#heritage">Heritage</a>
+      <a href="#regions">Regions</a>
+      <a href="#contact">Share a story</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>A country that celebrates all year round</h1>
+        <p>Explore the festivals, traditions and living heritage of India, from the Himalayas to the Kerala backwaters.</p>
+        <a class="btn" href="#festivals">Browse festivals</a>
+      </div>
+      <div class="rangoli" aria-hidden="true"></div>
+    </section>
+
+    <section class="stats" aria-label="India at a glance">
+      <div><strong>28</strong><span>states with their own customs</span></div>
+      <div><strong>22</strong><span>officially recognised languages</span></div>
+      <div><strong>40+</strong><span>UNESCO World Heritage Sites</span></div>
+    </section>
+
+    <section id="festivals" class="section">
+      <h2>Festivals of India</h2>
+      <div class="controls">
+        <input type="search" id="search" placeholder="Search a festival or state" aria-label="Search festivals">
+        <div class="filters" id="filters">
+          <button class="chip active" data-region="All">All</button>
+          <button class="chip" data-region="North">North</button>
+          <button class="chip" data-region="South">South</button>
+          <button class="chip" data-region="East">East</button>
+          <button class="chip" data-region="West">West</button>
+        </div>
+      </div>
+      <div class="grid" id="festivalGrid"></div>
+      <p id="emptyMsg" class="empty" hidden>No festival matches your search. Try another name or choose All.</p>
+    </section>
+
+    <section id="heritage" class="section alt">
+      <h2>Traditions and heritage</h2>
+      <div class="tabs" role="tablist" id="tabs">
+        <button role="tab" class="tab active" data-tab="art">Art and dance</button>
+        <button role="tab" class="tab" data-tab="food">Food</button>
+        <button role="tab" class="tab" data-tab="craft">Crafts</button>
+        <button role="tab" class="tab" data-tab="arch">Monuments</button>
+      </div>
+      <div class="tab-panel" id="tabPanel" role="tabpanel"></div>
+    </section>
+
+    <section id="regions" class="section">
+      <h2>Regional celebrations</h2>
+      <label for="regionSelect">Choose a state</label>
+      <select id="regionSelect">
+        <option value="">Select a state</option>
+      </select>
+      <div class="region-card" id="regionCard" aria-live="polite">Pick a state to see how it celebrates.</div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <h2>Share your festival story</h2>
+      <form id="storyForm" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="Your name">
+          <small class="error" id="nameErr"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+          <small class="error" id="emailErr"></small>
+        </div>
+        <div class="field">
+          <label for="festival">Festival</label>
+          <select id="festival" name="festival"></select>
+          <small class="error" id="festivalErr"></small>
+        </div>
+        <fieldset class="field">
+          <legend>How do you celebrate?</legend>
+          <label class="inline"><input type="radio" name="how" value="Family" checked> With family</label>
+          <label class="inline"><input type="radio" name="how" value="Community"> With community</label>
+          <label class="inline"><input type="radio" name="how" value="Travel"> While travelling</label>
+        </fieldset>
+        <div class="field">
+          <label for="story">Your story</label>
+          <textarea id="story" name="story" rows="4" maxlength="300" placeholder="Tell us a memory, a recipe or a ritual"></textarea>
+          <small id="count">0 / 300</small>
+          <small class="error" id="storyErr"></small>
+        </div>
+        <label class="inline"><input type="checkbox" id="agree"> I agree to share this story on the website</label>
+        <small class="error" id="agreeErr"></small>
+        <button type="submit" class="btn">Send my story</button>
+      </form>
+      <div id="success" class="success" hidden></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Utsav – a student project celebrating India's culture. Built with HTML, CSS and JavaScript.</p>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
